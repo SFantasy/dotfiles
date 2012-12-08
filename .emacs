@@ -1,18 +1,37 @@
-;;some parts of this file are gathered from YinWang's .emacs file
-;;部分采集自王垠的.emacs文件
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(inhibit-startup-screen t)
+  ;;disable the default startup-screen
+)
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )
+;;
+(set-foreground-color "Wheat")
+(set-background-color "DarkSlateGray")
+(set-cursor-color "Orchid")
+(set-mouse-color "Orchid")
+;;设置默认的界面颜色、鼠标指针颜色
+(set-default-font "Source Code Pro 10")
+;;设置默认字体
+(blink-cursor-mode nil)
+;;禁止光标闪烁
+;;Most of them are import from 王垠的Emacs
 (global-linum-mode t)
-;;Line number
 ;;显示行列号
 (setq default-fill-column 80)
 ;;设置最大列数为80
-;;Set the max column number
-(setq default-tab-width 8)
-;;设置tab宽度为8个字符
-;;Set the width of tab to 8 characters
+(setq default-tab-width 4)
+;;成真正的TAB字符，并且加亮显示的。
 (setq sentence-end "\\([。！？]\\|[.?!][]\"')}]*\\($\\|[ \t]\\)[ \t\n]*")
 (setq sentence-end-double-space nil)
-;;设置sentence-end可以标识中文标点。不用在fill时在句号后插入两个空格
-;;Make it possible to use Chinese at the end of a sentence
+;;设置sentence-end可以标识中文标点。不用在fill时在句号后插入两个空格。
 (setq default-major-mode 'text-mode)
 ;;把缺省的major mode设置为text-mode,而不是什么功能也没有的fundamental-mode.
 (setq scroll-margin 3
@@ -48,13 +67,10 @@
 ;;添加yasnippet
 (setq-default make-backup-files nil)
 ;;不生成临时文件
-;;Do not create temp files
 ;;
-;;
-;;make the emacs a python IDE
+;;make the emacs a Python IDE
 (add-to-list 'load-path
 		"~/.emacs.d/plugins/auto-complete-1.3.1")
-;;Google this file and download it
 (require 'auto-complete-config)
 (global-auto-complete-mode t)
 (setq-default ac-sources '(ac-source-words-in-same-mode-buffers))
@@ -63,9 +79,9 @@
 (set-face-background 'ac-candidate-face "lightgray")
 (set-face-underline 'ac-candidate-face "darkgray")
 (set-face-background 'ac-selection-face "steelblue") 
-;;; 设置比上面截图中更好看的背景颜色
+;; 设置比上面截图中更好看的背景颜色
 (define-key ac-completing-map "\M-n" 'ac-next)  
-;;; 列表中通过按M-n来向下移动
+;; 列表中通过按M-n来向下移动
 (define-key ac-completing-map "\M-p" 'ac-previous)
 (setq ac-auto-start 2)
 (setq ac-dwim t)
