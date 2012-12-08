@@ -22,13 +22,17 @@
 ;;设置默认字体
 (blink-cursor-mode nil)
 ;;禁止光标闪烁
-;;Most of them are import from 王垠的Emacs
 (global-linum-mode t)
+(setq column-number-mode t)
 ;;显示行列号
 (setq default-fill-column 80)
 ;;设置最大列数为80
 (setq default-tab-width 4)
 ;;成真正的TAB字符，并且加亮显示的。
+(setq tool-bar-mode t)
+;;保留tool-bar
+(setq menu-bar-mode nil)
+;;去掉menu-bar
 (setq sentence-end "\\([。！？]\\|[.?!][]\"')}]*\\($\\|[ \t]\\)[ \t\n]*")
 (setq sentence-end-double-space nil)
 ;;设置sentence-end可以标识中文标点。不用在fill时在句号后插入两个空格。
