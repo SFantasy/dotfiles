@@ -44,7 +44,7 @@
 (show-paren-mode t)
 (setq show-paren-style 'parentheses)
 ;;括号匹配时显示另外一边的括号，而不是烦人的跳到另一个括号。
-(mouse-avoidance-mode 'animate)
+;;(mouse-avoidance-mode 'animate) // It make the cursor in Emacs moving out of control, sometimes.
 ;;光标靠近鼠标的时候，让鼠标指针自动让开，别挡住视线。
 (setq frame-title-format "emacs@%b")
 ;;在标题栏显示buffer的名字
