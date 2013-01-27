@@ -13,6 +13,8 @@
   ;; If there is more than one, they won't work right.
  )
 ;;
+(setq shell-file-name "/bin/bash")
+;; 设置Emacs中启动的shell为bash.
 (set-foreground-color "Wheat")
 (set-background-color "DarkSlateGray")
 (set-cursor-color "Orchid")
