@@ -1,3 +1,11 @@
+;;  author: SFantasy
+;;  
+;;  ---    /-\ /-\    /\   -----    -----
+;;  |--   |   |  |   /--\  |       |____
+;;  |__   |      |  |    | |____        |
+;;  __________________________________ _|    
+;;
+;;
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
@@ -15,10 +23,13 @@
 ;;
 (setq shell-file-name "/bin/bash")
 ;; 设置Emacs中启动的shell为bash.
-(set-foreground-color "Wheat")
-(set-background-color "DarkSlateGray")
-(set-cursor-color "Orchid")
-(set-mouse-color "Orchid")
+(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on t)
+;; 使Emacs 支持ANSI color的Shell进程
+;;(set-foreground-color "Wheat")
+;;(set-background-color "DarkSlateGray")
+;;(set-cursor-color "Orchid")
+;;(set-mouse-color "Orchid")
 ;;设置默认的界面颜色、鼠标指针颜色
 (set-default-font "Source Code Pro 10")
 ;;设置默认字体
@@ -66,6 +77,14 @@
 (setq dired-recursive-copies 'top)
 (setq dired-recursive-deletes 'top)
 ;;让dired可以递归的拷贝和删除目录
+;;
+(add-to-list 'load-path
+                "~/.emacs.d/plugins/")
+(require 'color-theme)
+(color-theme-initialize)
+(color-theme-example)
+;; 添加color-theme
+;;
 (add-to-list 'load-path
 		"~/.emacs.d/plugins/yasnippet")
 (require 'yasnippet)
@@ -82,9 +101,9 @@
 (setq-default ac-sources '(ac-source-words-in-same-mode-buffers))
 (add-hook 'emacs-lisp-mode-hook (lambda () (add-to-list 'ac-sources 'ac-source-symbols)))
 (add-hook 'auto-complete-mode-hook (lambda () (add-to-list 'ac-sources 'ac-source-filename)))
-(set-face-background 'ac-candidate-face "lightgray")
-(set-face-underline 'ac-candidate-face "darkgray")
-(set-face-background 'ac-selection-face "steelblue") 
+;;(set-face-background 'ac-candidate-face "lightgray")
+;;(set-face-underline 'ac-candidate-face "darkgray")
+;;(set-face-background 'ac-selection-face "steelblue") 
 ;; 设置比上面截图中更好看的背景颜色
 (define-key ac-completing-map "\M-n" 'ac-next)  
 ;; 列表中通过按M-n来向下移动
