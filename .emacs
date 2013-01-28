@@ -1,11 +1,3 @@
-;;  author: SFantasy
-;;  
-;;  ---    /-\ /-\    /\   -----    -----
-;;  |--   |   |  |   /--\  |       |____
-;;  |__   |      |  |    | |____        |
-;;  __________________________________ _|    
-;;
-;;
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
@@ -21,11 +13,6 @@
   ;; If there is more than one, they won't work right.
  )
 ;;
-(setq shell-file-name "/bin/bash")
-;; 设置Emacs中启动的shell为bash.
-(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
-(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on t)
-;; 使Emacs 支持ANSI color的Shell进程
 ;;(set-foreground-color "Wheat")
 ;;(set-background-color "DarkSlateGray")
 ;;(set-cursor-color "Orchid")
@@ -57,7 +44,7 @@
 (show-paren-mode t)
 (setq show-paren-style 'parentheses)
 ;;括号匹配时显示另外一边的括号，而不是烦人的跳到另一个括号。
-;;(mouse-avoidance-mode 'animate) // It make the cursor in Emacs moving out of control, sometimes.
+;;(mouse-avoidance-mode 'animate) //It make the cursor in Emacs moving out of condition sometimes.
 ;;光标靠近鼠标的时候，让鼠标指针自动让开，别挡住视线。
 (setq frame-title-format "emacs@%b")
 ;;在标题栏显示buffer的名字
@@ -79,17 +66,24 @@
 ;;让dired可以递归的拷贝和删除目录
 ;;
 (add-to-list 'load-path
-                "~/.emacs.d/plugins/")
+               "~/.emacs.d/plugins")
 (require 'color-theme)
 (color-theme-initialize)
 (color-theme-example)
-;; 添加color-theme
-;;
+;;(color-theme-oawald)
+;;(load-file "~/.emacs.d/plugins/themes/color-theme-hacker.el")
+;;(color-theme-hacker)
+;; Add Color Theme
+;; 添加Color Theme
 (add-to-list 'load-path
 		"~/.emacs.d/plugins/yasnippet")
 (require 'yasnippet)
 (yas-global-mode 1)
-;;添加yasnippet
+(require 'dropdown-list)
+(setq yas-prompt-functions '(yas-dropdown-prompt
+                             yas-ido-prompt
+                             yas-completing-prompt))
+;;添加yasnippet 以及附加的dropdown-list
 (setq-default make-backup-files nil)
 ;;不生成临时文件
 ;;
