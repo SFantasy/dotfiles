@@ -70,6 +70,10 @@
 (require 'color-theme)
 (color-theme-initialize)
 (color-theme-example)
+(autoload 'markdown-mode "markdown-mode.el"
+          "Major mode for editing Markdown files" t)
+(setq auto-mode-alist
+      (cons '("\\.markdown" . markdown-mode) auto-mode-alist))
 ;;(color-theme-oawald)
 ;;(load-file "~/.emacs.d/plugins/themes/color-theme-hacker.el")
 ;;(color-theme-hacker)
