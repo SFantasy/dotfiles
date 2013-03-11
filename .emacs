@@ -68,8 +68,12 @@
 (add-to-list 'load-path
                "~/.emacs.d/plugins")
 (require 'color-theme)
-(color-theme-initialize)
-(color-theme-example)
+(eval-after-load "color-theme"
+  '(progn
+      (color-theme-initialize)
+	(color-theme-example)))
+;;(color-theme-initialize)
+;;(color-theme-example)
 (autoload 'markdown-mode "markdown-mode.el"
           "Major mode for editing Markdown files" t)
 (setq auto-mode-alist
