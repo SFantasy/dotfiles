@@ -113,4 +113,9 @@
 (setq ac-auto-start 2)
 (setq ac-dwim t)
 (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
-
+;;Zen Coding by https://github.com/rooney/zencoding
+(add-to-list 'load-path
+           	"~/emacs.d/plugins")
+(require 'zencoding-mode)
+;;配置到sgml-mode-hook,让它自动启动
+(add-hook 'sgml-mode-hook 'zencoding-mode)
