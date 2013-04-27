@@ -6,7 +6,7 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
-  ;;'(inhibit-startup-screen t)
+  '(inhibit-startup-screen t)
   ;;disable the default startup-screen
 )
 (custom-set-faces
@@ -72,13 +72,14 @@
 ;;
 (add-to-list 'load-path
                "~/.emacs.d/plugins")
+
 (require 'color-theme)
-(eval-after-load "color-theme"
-  '(progn
-      (color-theme-initialize)
-	(color-theme-example)))
-;;(color-theme-initialize)
-;;(color-theme-example)
+;;(eval-after-load "color-theme"
+;;  '(progn
+;;      (color-theme-initialize)
+;;	(molokai-theme)))
+(color-theme-initialize)
+(color-theme-fantasy)
 (autoload 'markdown-mode "markdown-mode.el"
           "Major mode for editing Markdown files" t)
 (setq auto-mode-alist
@@ -124,6 +125,7 @@
 (require 'zencoding-mode)
 ;;配置到sgml-mode-hook,让它自动启动
 (add-hook 'sgml-mode-hook 'zencoding-mode)
+
 (autoload 'paredit-mode "paredit"
   "Minor mode for pseudo-structurally editing Lisp code."
   t)
@@ -164,3 +166,7 @@
     (paredit-mode 1)
     (define-key scheme-mode-map (kbd "<f5>") 'scheme-send-last-sexp-split-window)
     (define-key scheme-mode-map (kbd "<f6>") 'scheme-send-definition-split-window)))
+(add-to-list 'load-path
+			 "~/emacs.d/plugins/")
+(require 'parenface)
+(set-face-foreground 'paren-face "DimGray")
