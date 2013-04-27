@@ -1,9 +1,12 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; fantasy shao's .emacs file 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(inhibit-startup-screen t)
+  ;;'(inhibit-startup-screen t)
   ;;disable the default startup-screen
 )
 (custom-set-faces
@@ -29,10 +32,12 @@
 ;;设置最大列数为80
 (setq default-tab-width 4)
 ;;成真正的TAB字符，并且加亮显示的。
-(setq tool-bar-mode t)
-;;保留tool-bar
-(setq menu-bar-mode nil)
+(tool-bar-mode nil)
+;;去掉tool-bar
+(menu-bar-mode nil)
 ;;去掉menu-bar
+(customize-set-variable 'scroll-bar-mode 'right)
+;;将滚动条放到右侧
 (setq sentence-end "\\([。！？]\\|[.?!][]\"')}]*\\($\\|[ \t]\\)[ \t\n]*")
 (setq sentence-end-double-space nil)
 ;;设置sentence-end可以标识中文标点。不用在fill时在句号后插入两个空格。
@@ -119,3 +124,43 @@
 (require 'zencoding-mode)
 ;;配置到sgml-mode-hook,让它自动启动
 (add-hook 'sgml-mode-hook 'zencoding-mode)
+(autoload 'paredit-mode "paredit"
+  "Minor mode for pseudo-structurally editing Lisp code."
+  t)
+;;;;;;;;
+;; Scheme
+;;;;;;;;
+;; Yinwang0's Schme mode
+(defun scheme-split-window ()
+  (cond
+   ((= 1 (count-windows))
+    (delete-other-windows)
+    (split-window-vertically (floor (* 0.68 (window-height))))
+    (other-window 1)
+    (switch-to-buffer "*scheme*")
+    (other-window 1))
+   ((not (find "*scheme*"
+               (mapcar (lambda (w) (buffer-name (window-buffer w)))
+                       (window-list))
+               :test 'equal))
+    (other-window 1)
+    (switch-to-buffer "*scheme*")
+    (other-window -1))))
+
+
+(defun scheme-send-last-sexp-split-window ()
+  (interactive)
+  (scheme-split-window)
+  (scheme-send-last-sexp))
+
+
+(defun scheme-send-definition-split-window ()
+  (interactive)
+  (scheme-split-window)
+  (scheme-send-definition))
+
+(add-hook 'scheme-mode-hook
+  (lambda ()
+    (paredit-mode 1)
+    (define-key scheme-mode-map (kbd "<f5>") 'scheme-send-last-sexp-split-window)
+    (define-key scheme-mode-map (kbd "<f6>") 'scheme-send-definition-split-window)))
