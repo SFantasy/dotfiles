@@ -21,7 +21,7 @@
 ;;(set-cursor-color "Orchid")
 ;;(set-mouse-color "Orchid")
 ;;设置默认的界面颜色、鼠标指针颜色
-(set-default-font "Source Code Pro 10")
+(set-default-font "Monaco 10")
 ;;设置默认字体
 (blink-cursor-mode nil)
 ;;禁止光标闪烁
