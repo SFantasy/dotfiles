@@ -132,7 +132,7 @@
 ;;;;;;;;
 ;; Scheme
 ;;;;;;;;
-;; Yinwang0's Schme mode
+;; Yinwang0's Scheme mode
 (defun scheme-split-window ()
   (cond
    ((= 1 (count-windows))
@@ -155,7 +155,6 @@
   (scheme-split-window)
   (scheme-send-last-sexp))
 
-
 (defun scheme-send-definition-split-window ()
   (interactive)
   (scheme-split-window)
@@ -168,5 +167,13 @@
     (define-key scheme-mode-map (kbd "<f6>") 'scheme-send-definition-split-window)))
 (add-to-list 'load-path
 			 "~/emacs.d/plugins/")
+(defun lisp-indent-or-complete (&optional arg)
+  (interactive "p")
+  (if (or (looking-back "^\\s-*") (bolp))
+      (call-interactively 'lisp-indent-line)
+      (call-interactively 'slime-indent-and-complete-symbol)))
+(eval-after-load "lisp-mode"
+  '(progn
+     (define-key lisp-mode-map (kbd "TAB") 'lisp-indent-or-complete)))
 (require 'parenface)
 (set-face-foreground 'paren-face "DimGray")
