@@ -8,7 +8,7 @@
      ((background-color . "#1b1d1e")
       (background-mode . dark)
       (border-color . "black")
-      (cursor-color . "black")
+      (cursor-color . "white")
       (foreground-color . "#f8f8f8")
       (mouse-color . "black"))
      (region ((t (:background "#403d3d"))
