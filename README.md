@@ -1,15 +1,18 @@
-SFantasy's .emacs file
+dotfiles
 ============
+
 Author: shao fantasy (forever.fantasy27@gmail.com)
 
+## Emacs
 
-1.Download the .zip files in directory /plugins.
 
-2.Use the .emacs file.
+## Sublime Text 3
 
-## Plugins
+### Extensions
 
-* Color-theme
-* Zen-coding
-* Yasnippet
-* Auto-complete
+* Emmet
+* Emmet LiveStyle
+* Sublimelinter
+* Markdown Preview
+* SASS snippets
+* Coffeescript
