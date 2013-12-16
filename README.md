@@ -1,10 +1,14 @@
 dotfiles
 ============
 
-Author: shao fantasy (forever.fantasy27@gmail.com)
+Author: fantasyshao (forever.fantasy27@gmail.com)
 
 ## Emacs
 
+* yasnippet
+* color-theme
+* zencoding
+* auto-complete
 
 ## Sublime Text 3
 
@@ -16,3 +20,7 @@ Author: shao fantasy (forever.fantasy27@gmail.com)
 * Markdown Preview
 * SASS snippets
 * Coffeescript
+
+## License
+
+The MIT License
