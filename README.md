@@ -10,7 +10,7 @@ Author: fantasyshao (forever.fantasy27@gmail.com)
 * zencoding
 * auto-complete
 
-## Sublime Text 3
+## Sublime Text 2
 
 ### Extensions
 
@@ -20,6 +20,8 @@ Author: fantasyshao (forever.fantasy27@gmail.com)
 * Markdown Preview
 * SASS snippets
 * Coffeescript
+* Git
+* SublimeTmpl
 
 ## License
 
