@@ -1,10 +1,29 @@
 {
-    "editor.fontSize": 16,
     "editor.fontFamily": "Monaco, 'Courier New', monospace",
+    "editor.tabSize": 2,
+    "editor.renderWhitespace": "all",
     "editor.rulers": [
-        80,
-        120
+      80,
+      120
     ],
+    "editor.fontSize": 14,
+    "workbench.iconTheme": "material-icon-theme",
+    "flow.pathToFlow": "/Users/fantasy/.nvm/versions/node/v6.11.2/bin/flow",
+    "typescript.validate.enable": false,
+    "javascript.validate.enable": false,
+    "files.trimTrailingWhitespace": true,
+    "emmet.triggerExpansionOnTab": true,
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/bower_components": true,
+      "**/client/local": true,
+      "**/client/build": true,
+      "**/coverage": true
+    },
+    "workbench.colorTheme": "One Dark Pro",
     "editor.minimap.enabled": false,
-    "editor.renderWhitespace": "boundary"
-}
+    "emmet.includeLanguages": {
+      "javascript": "javascriptreact"
+    },
+    "markdown-toc.depthFrom": 2
+  }
